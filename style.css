@@ -1,0 +1,100 @@
+.flex-box{
+    height: 33px;
+    width: 100%;
+    display: flex;
+    direction: row;
+    justify-content: space-between;
+    justify-items: center;
+    border-collapse: collapse;
+}
+
+.flex-raul{
+    display: flex;
+    direction: row;
+    justify-content: flex-start;
+}
+
+.campoBusqueda{
+    margin-left: 25px;
+    display: flex;
+    direction: row;
+    justify-content: flex-start;
+    background-color: lightgray;
+    border-radius: 15px;
+    
+}
+
+.botonCategoria{
+    background: none;
+    border: none;
+    border-collapse: collapse;
+    margin-left: 40px;
+    color: #95958F;
+}
+
+.botonHabituales{
+    background: none;
+    border: none;
+    border-collapse: collapse;
+    margin-left: 20px;
+    color: #95958F;
+}
+
+.campo{
+    color: black;
+    margin-left: 5px;
+    background-color: lightgray;
+    border-radius: 0px 15px 15px 0px;
+    border: none;
+}
+
+.botonCategoria:hover{
+    text-decoration: underline;
+    color: black;
+    font-weight:bold;
+    text-decoration-color: #009660;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 5px;
+}
+
+.botonHabituales:hover{
+    text-decoration: underline;
+    color: black;
+    font-weight:bold;
+    text-decoration-color: #009660;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 5px;
+}
+
+.flex-monica{
+    display: flex;
+    direction: row;
+    align-items: right;
+}
+
+.identificate{
+    list-style: none;
+    float: left;
+    background-color: white;
+    border: none;
+    color: #95958F;
+}
+
+.identificate:hover{
+    font-weight:bold;
+    color: black;
+}
+
+.carrito{
+    background-color: #FCBC36;
+    border-radius: 5px;
+    border-color: #FCBC36;
+}
+
+.carrito:hover{
+    background-color: #FED456;
+    border-color: #FED456;
+}
+
+ 
+   
