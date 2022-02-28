@@ -59,12 +59,14 @@
     width: 100px;
     margin-left: 10px;
     margin-top: 20px;
+    background-color: red;
+    color: aliceblue;
 
 }
 
 .flexListasEstados{
-    height: 1000px;
-    width: 1800px;
+    height: 820px;
+    width: 1500px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -78,17 +80,73 @@
     align-items: center;
 }
 
-.listaEstado{
+.espacioDoing{
+    height: 100%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.espacioDone{
+    height: 100%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.espacioDeleted{
+    height: 100%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.listaTodo,.listaDoing,.listaDone,.listaDeleted{
     height: 800px;
     width: 250px;
     background-color: lightgrey;
-    border-radius: 15px;
+    border-radius: 8px;
     border: 1px;
+    overflow-y:scroll;
+}
+
+.vaciar{
+    margin-top: 5px;
+    background-color: red;
+    color: aliceblue;
 }
 
 .flexListaGeneral{
     height: 250px;
-    width: 1800px;
-    background-color: chartreuse;
+    width: 1500px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.listaGeneral{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: lightgrey;
+    height: 300px;
+    width: 100%;
+    border: 1px;
+    border-radius: 15px;
+}
+
+.tareaSimple{
+    margin: 5px;
+    border-radius: 5px;
+    background-color: bisque;
+
+}
+
+.dentroTarea{
+    display: flex;
+    justify-content: space-between;
 }
    
