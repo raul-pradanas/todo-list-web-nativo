@@ -9,6 +9,7 @@ botonAñadirTarea.addEventListener("click", (e) => {
   e.preventDefault();
   /* Implement on click functionality */
   crearTarea();
+  actualizarPagina();
 });
 
 function crearTarea() {
@@ -36,6 +37,20 @@ function crearTarea() {
 
   nuevaTarea = new Tarea(liTitulo, liDescripcion, liEstado, liPrioridad);
   misTareas.push(nuevaTarea);
+
+  if (liEstado === "todo") {
+    const lista2 = document.getElementById("listaTodo");
+    lista2.appendChild(template);
+  } else if (liEstado === "doing") {
+    const lista2 = document.getElementById("listaDoing");
+    lista2.appendChild(template);
+  } else if (liEstado === "done") {
+    const lista2 = document.getElementById("listaDone");
+    lista2.appendChild(template);
+  } else {
+    const lista2 = document.getElementById("listaDeleted");
+    lista2.appendChild(template);
+  }
 }
 
 misTareas.forEach((element) => {
@@ -76,28 +91,164 @@ misTareas.forEach((element) => {
   }
 });
 
-misTareas.forEach((element) => {
-  //Recogo los datos de la nueva tarea
-  const lTitulo = element.nombre;
-  const lDescripcion = element.descripcion;
-  const lEstado = element.estado;
-  const lPrioridad = element.prioridad;
-
-  misTareas.push(new Tarea(lTitulo,lDescripcion,lEstado,lPrioridad));
-
-  //Clono el div que está oculto
-  const tareaClonada = document.getElementById("tareaClonar");
-  let template = tareaClonada.cloneNode(true);
-  template.removeAttribute("id");
+function actualizarPagina(){
   const lista = document.getElementById("listaGeneral");
+    let child = lista.lastElementChild;
 
-  //Establezco los valores recogidos anteriormente
-  template.getElementsByClassName("TituloMostrar")[0].innerHTML = lTitulo;
-  template.getElementsByClassName("DescripcionMostrar")[0].innerHTML =
-    lDescripcion;
-  template.getElementsByClassName("EstadoMostrar")[0].innerHTML = lEstado;
-  template.getElementsByClassName("PrioridadMostrar")[0].innerHTML =
-    lPrioridad;
+    while (child) {
+      lista.removeChild(child);
 
-  lista.appendChild(template);
+      child = lista.lastElementChild;
+    }
+
+  misTareas.forEach((element) => {
+    //Recogo los datos de la nueva tarea
+    const lTitulo = element.nombre;
+    const lDescripcion = element.descripcion;
+    const lEstado = element.estado;
+    const lPrioridad = element.prioridad;
+  
+    //Clono el div que está oculto
+    const tareaClonada = document.getElementById("tareaClonar");
+    let template = tareaClonada.cloneNode(true);
+    template.removeAttribute("id");
+    
+  
+    //Establezco los valores recogidos anteriormente
+    template.getElementsByClassName("TituloMostrar")[0].innerHTML = lTitulo;
+    template.getElementsByClassName("DescripcionMostrar")[0].innerHTML =
+      lDescripcion;
+    template.getElementsByClassName("EstadoMostrar")[0].innerHTML = lEstado;
+    template.getElementsByClassName("PrioridadMostrar")[0].innerHTML = lPrioridad;
+    
+    if(lEstado != "removed"){
+      lista.appendChild(template);
+    }
+
+  });
+}
+
+seguro.addEventListener("click", (e) => {
+  e.preventDefault();
+  /* Implement on click functionality */
+
+  misTareas.forEach((element) => {
+    //Recogo los datos de la nueva tarea
+    const liTitulo = element.nombre;
+    const liDescripcion = element.descripcion;
+    const liEstado = element.estado;
+    const liPrioridad = element.prioridad;
+
+    //Clono el div que está oculto
+    const tareaClonada = document.getElementById("tareaClonar");
+    let template = tareaClonada.cloneNode(true);
+    let lista = document.getElementById("listaToDo");
+    template.removeAttribute("id");
+
+    if(seguro.value==="todo"){
+      let lista = document.getElementById("listaToDo");
+    }
+    else if(seguro.value==="doing"){
+      let lista = document.getElementById("listaDoing");
+    }
+    else if(seguro.value==="done"){
+      let lista = document.getElementById("listaDone");
+    }
+    else if(seguro.value==="deleted"){
+      let lista = document.getElementById("listaDeleted");
+    }
+    
+
+    //Establezco los valores recogidos anteriormente
+    template.getElementsByClassName("TituloMostrar")[0].innerHTML = liTitulo;
+    template.getElementsByClassName("DescripcionMostrar")[0].innerHTML =
+      liDescripcion;
+    template.getElementsByClassName("EstadoMostrar")[0].innerHTML = "deleted";
+    template.getElementsByClassName("PrioridadMostrar")[0].innerHTML =
+      liPrioridad;
+
+    
+    if (liEstado === "todo" && seguro.value === "todo") {
+      element.estado = "deleted";
+      const lista2 = document.getElementById("listaDeleted");
+      lista2.appendChild(template);
+
+      const mynode = document.getElementById("listaTodo");
+      mynode.innerHTML='';
+    } 
+    else if (liEstado === "doing" && seguro.value === "doing") {
+      element.estado = "deleted";
+      const lista2 = document.getElementById("listaDeleted");
+      lista2.appendChild(template);
+
+      const mynode = document.getElementById("listaDoing");
+      mynode.innerHTML='';
+    }
+    else if (liEstado === "done" && seguro.value === "done") {
+      element.estado = "deleted";
+      const lista2 = document.getElementById("listaDeleted");
+      lista2.appendChild(template);
+
+      const mynode = document.getElementById("listaDone");
+      mynode.innerHTML='';
+    }
+    else if (liEstado === "deleted" && seguro.value === "deleted") {
+      element.estado = "removed";
+
+      const mynode = document.getElementById("listaDeleted");
+      mynode.innerHTML='';
+    }
+    else {
+      //console.log("No hay tareas en la lista");
+    }
+
+    
+
+    const modal = document.getElementById("myModal");
+    modal.style.display = "none";
+    actualizarPagina();
+  });
 });
+
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("vaciarTodo");
+const btn2 = document.getElementById("vaciarDoing");
+const btn3 = document.getElementById("vaciarDone");
+const btn4 = document.getElementById("vaciarDeleted");
+
+
+btn.onclick = function() {
+  modal.style.display = "block";
+  seguro.setAttribute("value","todo");
+}
+
+btn2.onclick = function() {
+  modal.style.display = "block";
+  seguro.setAttribute("value","doing");
+}
+
+btn3.onclick = function() {
+  modal.style.display = "block";
+  seguro.setAttribute("value","done");
+}
+
+btn4.onclick = function() {
+  modal.style.display = "block";
+  seguro.setAttribute("value","deleted");
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+negacion.addEventListener("click", (e) => {
+  e.preventDefault();
+  /* Implement on click functionality */
+  const modal = document.getElementById("myModal");
+  modal.style.display = "none";
+});
+
+actualizarPagina();
+
