@@ -53,6 +53,7 @@ function crearTarea() {
   }
 }
 
+//Muestra todas las tareas en la lusta general y las separa por estados
 misTareas.forEach((element) => {
   //Recogo los datos de la nueva tarea
   const liTitulo = element.nombre;
@@ -91,6 +92,7 @@ misTareas.forEach((element) => {
   }
 });
 
+//Actualiza los estados de las tareas
 function actualizarPagina(){
   const lista = document.getElementById("listaGeneral");
     let child = lista.lastElementChild;
@@ -128,6 +130,7 @@ function actualizarPagina(){
   });
 }
 
+//Borrado de las listas
 seguro.addEventListener("click", (e) => {
   e.preventDefault();
   /* Implement on click functionality */
