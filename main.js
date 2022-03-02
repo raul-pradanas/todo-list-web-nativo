@@ -217,10 +217,10 @@ const btn2 = document.getElementById("vaciarDoing");
 const btn3 = document.getElementById("vaciarDone");
 const btn4 = document.getElementById("vaciarDeleted");
 
-const prio = document.getElementById("prioTodo");
+/* const prio = document.getElementById("prioTodo");
 const prio2 = document.getElementById("prioDoing");
 const prio3 = document.getElementById("prioDone");
-const prio4 = document.getElementById("prioDeleted");
+const prio4 = document.getElementById("prioDeleted"); */
 
 
 btn.onclick = function() {
@@ -243,32 +243,32 @@ btn4.onclick = function() {
   seguro.setAttribute("value","deleted");
 }
 
-prio.addEventListener("click", (e) => {
+/* prio.addEventListener("click", (e) => {
   e.preventDefault();
-  /* Implement on click functionality */
+  // Implement on click functionality 
   ordenarMisTareas(1);
 });
 
 prio2.addEventListener("click", (e) => {
   e.preventDefault();
-  /* Implement on click functionality */
+  // Implement on click functionality
   ordenarMisTareas(2);
   
 });
 
 prio3.addEventListener("click", (e) => {
   e.preventDefault();
-  /* Implement on click functionality */
+  // Implement on click functionality
   ordenarMisTareas(3);
   
 });
 
 prio4.addEventListener("click", (e) => {
   e.preventDefault();
-  /* Implement on click functionality */
+  // Implement on click functionality 
   ordenarMisTareas(4);
   
-});
+});*/
 
 window.onclick = function(event) {
   if (event.target == modal) {

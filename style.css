@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    background-image: url(https://fondosmil.com/fondo/21010.jpg);
+    border: 1px;
+    border-radius: 5px;
 }
 
 .flexTarea{
@@ -23,7 +26,7 @@
     border: 1px;
     border-radius: 15px;
     margin-left: 5px;
-    background-color: lightgrey;
+    background-color: rgba(211,211,211,0.4);
 }
 
 .descripcionTarea{
@@ -32,7 +35,7 @@
     border: 1px;
     border-radius: 15px;
     margin-left: 5px;
-    background-color: lightgrey;
+    background-color: rgba(211,211,211,0.4);
 }
 
 .flexBotones{
@@ -105,7 +108,7 @@
 .listaTodo,.listaDoing,.listaDone,.listaDeleted{
     height: 800px;
     width: 250px;
-    background-color: lightgrey;
+    background-color: rgba(211,211,211,0.6);
     border-radius: 8px;
     border: 1px;
     overflow-y:scroll;
@@ -119,13 +122,13 @@
     border: 1px;
 }
 
-.prioTodo,.prioDoing,.prioDone,.prioDeleted{
+/* .prioTodo,.prioDoing,.prioDone,.prioDeleted{
     margin-top: 5px;
     background-color: red;
     color: aliceblue;
     border-radius: 5px;
     border: 1px;
-}
+} */
 
 .flexListaGeneral{
     display: flex;
@@ -138,7 +141,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: lightgrey;
+    background-color: rgba(211,211,211,0.6);
     border: 1px;
     border-radius: 15px;
 }
@@ -198,5 +201,9 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+  }
+
+  .tareaClonar{
+      background-color: bisque;
   }
    
