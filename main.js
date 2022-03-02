@@ -1,8 +1,8 @@
 const misTareas = [
-  new Tarea("Task 1", "Ejemplo", "todo", 23),
-  new Tarea("Task 2", "Ejemplo", "todo", 13),
-  new Tarea("Task 3", "Ejemplo", "done", 2),
-  new Tarea("Task 4", "Ejemplo", "doing", 3),
+  new Tarea("Task 1", "Descripción de ejemplo", "todo", 23),
+  new Tarea("Task 2", "Descripción de ejemplo", "todo", 13),
+  new Tarea("Task 3", "Descripción de ejemplo", "done", 2),
+  new Tarea("Task 4", "Descripción de ejemplo", "doing", 3),
 ];
 
 botonAñadirTarea.addEventListener("click", (e) => {
@@ -211,10 +211,16 @@ seguro.addEventListener("click", (e) => {
 });
 
 const modal = document.getElementById("myModal");
+
 const btn = document.getElementById("vaciarTodo");
 const btn2 = document.getElementById("vaciarDoing");
 const btn3 = document.getElementById("vaciarDone");
 const btn4 = document.getElementById("vaciarDeleted");
+
+const prio = document.getElementById("prioTodo");
+const prio2 = document.getElementById("prioDoing");
+const prio3 = document.getElementById("prioDone");
+const prio4 = document.getElementById("prioDeleted");
 
 
 btn.onclick = function() {
@@ -237,6 +243,33 @@ btn4.onclick = function() {
   seguro.setAttribute("value","deleted");
 }
 
+prio.addEventListener("click", (e) => {
+  e.preventDefault();
+  /* Implement on click functionality */
+  ordenarMisTareas(1);
+});
+
+prio2.addEventListener("click", (e) => {
+  e.preventDefault();
+  /* Implement on click functionality */
+  ordenarMisTareas(2);
+  
+});
+
+prio3.addEventListener("click", (e) => {
+  e.preventDefault();
+  /* Implement on click functionality */
+  ordenarMisTareas(3);
+  
+});
+
+prio4.addEventListener("click", (e) => {
+  e.preventDefault();
+  /* Implement on click functionality */
+  ordenarMisTareas(4);
+  
+});
+
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
@@ -251,4 +284,3 @@ negacion.addEventListener("click", (e) => {
 });
 
 actualizarPagina();
-

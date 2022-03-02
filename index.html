@@ -36,7 +36,12 @@
             </div>
             <div class="flexListasEstados">
                 <div class="espacioToDo" style="align-self: center;">
-                    <span> To Do </span>
+                    <div class="tituloListasEstados">
+                        <span> To Do </span>
+                        <button class="prioTodo" id="prioTodo">
+                            Prioridad
+                        </button>
+                    </div>
                     <div class="listaTodo" id="listaTodo">
                         <!-- Lista de tareas con estado To Do -->
                     </div>
@@ -47,7 +52,12 @@
                 </div>
 
                 <div class="espacioDoing" style="align-self: center;">
-                    <span> Doing </span>
+                    <div class="tituloListasEstados">
+                        <span> Doing </span>
+                        <button class="prioDoing" id="prioDoing">
+                            Prioridad
+                        </button>
+                    </div>
                     <div class="listaDoing" id="listaDoing">
                         <!-- Lista de tareas con estado Doing -->
                     </div>
@@ -57,7 +67,12 @@
                 </div>
 
                 <div class="espacioDone" style="align-self: center;">
-                    <span> Done </span>
+                    <div class="tituloListasEstados">
+                        <span> Done </span>
+                        <button class="prioDone" id="prioDone">
+                            Prioridad
+                        </button>
+                    </div>
                     <div class="listaDone" id="listaDone">
                         <!-- Lista de tareas con estado Done -->
                     </div>
@@ -67,7 +82,12 @@
                 </div>
 
                 <div class="espacioDeleted" style="align-self: center;">
-                    <span> Deleted </span>
+                    <div class="tituloListasEstados">
+                        <span> Deleted </span>
+                        <button class="prioDeleted" id="prioDeleted">
+                            Prioridad
+                        </button>
+                    </div>
                     <div class="listaDeleted" id="listaDeleted">
                         <!-- Lista de tareas con estado Deleted -->
                     </div>
@@ -83,7 +103,7 @@
             </div>
         </div>
         <div class="tareaSimple" style="display: none;">
-            <li id="tareaClonar" style="background-color: bisque;">
+            <li id="tareaClonar" style="background-color: bisque; list-style: none;">
                 <div class="cadaTarea">
                     <span class="TituloMostrar" style="font: bold;"></span>
                     <p class="DescripcionMostrar" style="margin-left: 5px;"></p>

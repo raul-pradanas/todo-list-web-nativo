@@ -1,15 +1,13 @@
 .flexBox{
-    height: 1500px;
-    width: 1800px;
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 .flexTarea{
-    height: 250px;
-    width: 1800px;
     display: flex;
     direction: row;
+    flex-wrap: wrap;
 }
 
 .nuevaTarea{
@@ -42,6 +40,7 @@
     width: auto;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .formularioEstado{
@@ -65,11 +64,10 @@
 }
 
 .flexListasEstados{
-    height: 820px;
-    width: 1500px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .espacioToDo{
@@ -117,14 +115,23 @@
     margin-top: 5px;
     background-color: red;
     color: aliceblue;
+    border-radius: 5px;
+    border: 1px;
+}
+
+.prioTodo,.prioDoing,.prioDone,.prioDeleted{
+    margin-top: 5px;
+    background-color: red;
+    color: aliceblue;
+    border-radius: 5px;
+    border: 1px;
 }
 
 .flexListaGeneral{
-    height: 250px;
-    width: 1500px;
     display: flex;
     flex-direction: column;
     margin-top: 30px;
+    flex-wrap: nowrap;
 }
 
 .listaGeneral{
@@ -132,8 +139,6 @@
     flex-direction: row;
     justify-content: space-around;
     background-color: lightgrey;
-    height: 300px;
-    width: 100%;
     border: 1px;
     border-radius: 15px;
 }
@@ -142,7 +147,6 @@
     margin: 5px;
     border-radius: 5px;
     background-color: bisque;
-
 }
 
 .dentroTarea{
@@ -172,6 +176,7 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+    flex-wrap: wrap;
   }
 
   .botonesModal{
@@ -187,5 +192,11 @@
   .negacion{
       background-color: red;
       color: white;
+  }
+
+  .tituloListasEstado{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
   }
    
